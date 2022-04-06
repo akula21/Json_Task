@@ -21,7 +21,6 @@ object.customers.forEach(value => {
     value.orders.forEach(val => {
         val.items.forEach(element => {
             let testPrice = (element.quantity * element.price).toFixed(2)
-            // console.log(value.ID + ' ' +val.orderID + ' ' +element.quantity + ' ' + element.price + ' ' + testPrice)
             prices += +testPrice
             pricesFixed = +prices.toFixed(2)
             quantities += element.quantity
