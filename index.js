@@ -1,4 +1,5 @@
 const fs = require('fs');
+const axios = require('axios');
 
 const json = fs.readFileSync('TestDaten.json', "utf-8");
 
@@ -46,9 +47,15 @@ obj.totalItemsOrdered = totalItemsOrder
 
 const myJson = JSON.stringify(obj)
 
+console.log(obj)
 console.log(myJson)
 
-
+axios.post('https://hook.wemakefuture.com/os3sfxnadnww21q9d57hwjuj58vdfok3', obj)
+    .then((response) => {
+        console.log(response.data);
+    }, (error) => {
+        console.log(error);
+    });
 
 
 
