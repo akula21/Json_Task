@@ -74,11 +74,15 @@ const myJson = JSON.stringify(obj)
 
 console.log(myJson)
 
-async (event, steps) => {
-axios = require('axios');
-const WEBHOOK = 'https://hook.wemakefuture.com/os3sfxnadnww21q9d57hwjuj58vdfok3'; // Webhook to which you send the final data
-const customerData = steps.trigger.event.body.customers; // Customer Data Object to modify
 
-// send result to webhook
-const result = await axios({ method: 'POST', url: WEBHOOK, data: myJson });
-}
+
+
+
+// async (event, steps) => {
+// axios = require('axios');
+// const WEBHOOK = 'https://hook.wemakefuture.com/os3sfxnadnww21q9d57hwjuj58vdfok3'; // Webhook to which you send the final data
+// const customerData = steps.trigger.event.body.customers; // Customer Data Object to modify
+//
+// // send result to webhook
+// const result = await axios({ method: 'POST', url: WEBHOOK, data: myJson });
+// }
