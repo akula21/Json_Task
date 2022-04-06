@@ -14,17 +14,17 @@ const obj = {
 
 object.customers.forEach(value => {
 
-    let pr = 0
-    let keks
-    let quant = 0
+    let prices = 0
+    let pricesFixed
+    let quantities = 0
 
     value.orders.forEach(val => {
         val.items.forEach(element => {
             let testPrice = (element.quantity * element.price).toFixed(2)
             // console.log(value.ID + ' ' +val.orderID + ' ' +element.quantity + ' ' + element.price + ' ' + testPrice)
-            pr += +testPrice
-            keks = +pr.toFixed(2)
-            quant += element.quantity
+            prices += +testPrice
+            pricesFixed = +prices.toFixed(2)
+            quantities += element.quantity
         })
     })
 
@@ -32,8 +32,8 @@ object.customers.forEach(value => {
         ID: value.ID,
         firstName: value.firstName,
         lastName: value.lastName,
-        customerValue: keks,
-        itemsOrdered: quant
+        customerValue: pricesFixed,
+        itemsOrdered: quantities
     }
 
     obj.customers.push(getInfo)
